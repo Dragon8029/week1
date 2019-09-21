@@ -4,13 +4,8 @@ let currentYear = today.getFullYear();
 let selectYear = document.getElementById("year");
 let selectMonth = document.getElementById("month");
 
-// CODE FOR THE WEEKLY LIST
-let list = document.getElementsByTagName('ul')[0];
 
-let newItemLast = document.createElement('li');
-let newTextLast = document.createTextNode('cream');
-newItemLast.appendChild(newTextLast);
-list.appendChild(newItemLast);
+
 
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -87,3 +82,16 @@ function showCalendar(month, year) {
     }
 
 }
+
+// CODE FOR THE WEEKLY LIST
+function list() {
+    let list = document.getElementsByTagName('ul')[0];
+
+    let newItemLast = document.createElement('li');
+    let newTextLast = document.createTextNode(`${today}`);
+    newItemLast.appendChild(newTextLast);
+    list.appendChild(newItemLast);
+}
+// End Weekly List code
+
+document.addEventListener('click', list);
